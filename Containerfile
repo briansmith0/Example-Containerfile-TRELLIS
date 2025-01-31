@@ -25,8 +25,5 @@ RUN . ./setup.sh --demo
 # Download the models: 
 RUN echo -e 'from trellis.pipelines import TrellisImageTo3DPipeline \nTrellisImageTo3DPipeline.from_pretrained("JeffreyXiang/TRELLIS-image-large")' | python
 
-#By default, it listens on localhost, which is not accessible from outside of the container
-ENV GRADIO_SERVER_NAME="0.0.0.0"
-
 EXPOSE 7860
 CMD ["python", "app.py"]
